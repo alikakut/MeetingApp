@@ -8,12 +8,13 @@ using MeetingApp.Domain.Base;
 
 namespace MeetingApp.Domain.Entities
 {
+    [Table("user_otp")]
     public class UserOtpEntity : BaseEntity
     {
         [Column("email")]
         public string Email { get; set; }
 
-        [Column("password")]
+        [Column("password_no")]
         public string Password { get; set; }
     }
 }

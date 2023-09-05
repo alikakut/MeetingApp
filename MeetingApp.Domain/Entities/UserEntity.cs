@@ -8,6 +8,7 @@ using MeetingApp.Domain.Base;
 
 namespace MeetingApp.Domain.Entities
 {
+    [Table("users")]
     public class UserEntity : BaseEntity
     {
         [Column("first_name")]
@@ -22,7 +23,7 @@ namespace MeetingApp.Domain.Entities
         [Column("phome_number")]
         public int PhoneNumber { get; set; }
 
-        [Column("password")]
+        [Column("password_no")]
         public string Password { get; set; }
 
 

@@ -8,6 +8,7 @@ using MeetingApp.Domain.Base;
 
 namespace MeetingApp.Domain.Entities
 {
+    [Table("product")]
     public class ProductEntity : BaseEntity
     {
         [Column("first_name")]
