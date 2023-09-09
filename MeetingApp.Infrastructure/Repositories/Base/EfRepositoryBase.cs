@@ -2,48 +2,57 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using MeetingApp.Application.Interfaces.Repositories.Base;
 using MeetingApp.Domain.Base;
+using Microsoft.EntityFrameworkCore;
 
 namespace MeetingApp.Infrastructure.Repositories.Base
 {
     public class EfRepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : BaseEntity
     {
-        public TEntity Entity { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public Task<TEntity> AddAsync(TEntity entity, bool IsSaveChanges = true)
+        public DbContext _context { get; set; }
+        public TEntity Entity { get; set; }
+        protected DbSet<TEntity> _dbSet;
+
+        public void Add(TEntity entity)
         {
-            throw new NotImplementedException();
+            List<TEntity> data = new List<TEntity>();
+            _dbSet.Add(entity);
+            this.Entity = entity;
         }
 
-        public Task Delete(long id)
+        public void Delete(TEntity entity)
         {
-            throw new NotImplementedException();
+            if (entity == null)
+                throw new Exception("Silinecek öğe bulunamadı");
+
+            entity.IsDeleted = true;
+
+            this.Update(entity, deletion: true);
         }
 
-        public Task<TEntity> GetByIdAsync(long id)
+        public TEntity GetById(long id, bool showDeleted = false)
         {
-            throw new NotImplementedException();
+            TEntity _data = null;
+
+            if (showDeleted == false)
+                _data = _dbSet.FirstOrDefault(x => x.Id == id && x.IsDeleted == false);
+            else
+                _data = _dbSet.FirstOrDefault(x => x.Id == id);
+
+            return _data;
         }
 
-        public Task<TEntity> GetFirstOrDefaultAsync(Expression<Func<TEntity, bool>> filter)
+        public TEntity GetFirstOrDefault(Expression<Func<TEntity, bool>> filter)
         {
-            throw new NotImplementedException();
+            return _dbSet.FirstOrDefault(filter);
         }
 
-        public Task<List<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> filter)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task SaveChangesAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<TEntity> Update(TEntity entity, bool IsSaveChanges = true)
+        public void Update(TEntity entity, bool deletion = false)
         {
             throw new NotImplementedException();
         }
