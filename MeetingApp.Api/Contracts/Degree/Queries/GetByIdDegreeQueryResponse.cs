@@ -2,7 +2,7 @@
 
 namespace MeetingApp.Api.Contracts.Degree.Queries
 {
-    public class GetAllDegreeQueryResponse : BaseResponseModel
+    public class GetByIdDegreeQueryResponse : BaseResponseModel
     {
         public string Description { get; set; }
     }

@@ -2,7 +2,7 @@
 
 namespace MeetingApp.Api.Contracts.Package.Commands
 {
-    public class CreatePackageCommandRequest : BaseResquestModel
+    public class CreatePackageCommandResponse : BaseResponseModel
     {
         public string Detail { get; set; }
         public int Price { get; set; }

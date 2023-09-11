@@ -2,10 +2,10 @@
 
 namespace MeetingApp.Api.Contracts.UserOtp.Commands
 {
-    public class CreateUserOtpCommandRequest : BaseResquestModel
+    public class UpdateUserOtpCommandRequest : BaseResquestModel
     {
+        public long Id { get; set; }
         public string Email { get; set; }
-
         public string Password { get; set; }
     }
 }

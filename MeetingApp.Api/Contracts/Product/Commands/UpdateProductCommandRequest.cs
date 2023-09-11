@@ -3,8 +3,9 @@ using MeetingApp.Domain.Entities;
 
 namespace MeetingApp.Api.Contracts.Product.Commands
 {
-    public class CreateProductCommandRequest : BaseResquestModel
+    public class UpdateProductCommandRequest : BaseResquestModel
     {
+        public long Id { get; set; }    
         public string FirstName { get; set; }
 
         public string LastName { get; set; }

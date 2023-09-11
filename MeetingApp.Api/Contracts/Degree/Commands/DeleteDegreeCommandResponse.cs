@@ -2,7 +2,7 @@
 
 namespace MeetingApp.Api.Contracts.Degree.Commands
 {
-    public class CreateDegreeCommandRequest : BaseResquestModel
+    public class DeleteDegreeCommandResponse : BaseResponseModel
     {
         public string Description { get; set; }
     }

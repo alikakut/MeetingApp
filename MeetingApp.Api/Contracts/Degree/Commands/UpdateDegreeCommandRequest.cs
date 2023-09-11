@@ -2,8 +2,9 @@
 
 namespace MeetingApp.Api.Contracts.Degree.Commands
 {
-    public class CreateDegreeCommandRequest : BaseResquestModel
+    public class UpdateDegreeCommandRequest : BaseResquestModel
     {
+        public long Id { get; set; }
         public string Description { get; set; }
     }
 }

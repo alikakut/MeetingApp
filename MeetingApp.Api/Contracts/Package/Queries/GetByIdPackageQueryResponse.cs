@@ -1,8 +1,8 @@
 ﻿using MeetingApp.Api.Contracts.Base;
 
-namespace MeetingApp.Api.Contracts.Package.Commands
+namespace MeetingApp.Api.Contracts.Package.Queries
 {
-    public class CreatePackageCommandRequest : BaseResquestModel
+    public class GetByIdPackageQueryResponse : BaseResponseModel
     {
         public string Detail { get; set; }
         public int Price { get; set; }

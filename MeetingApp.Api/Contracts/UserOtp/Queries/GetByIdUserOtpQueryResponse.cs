@@ -1,8 +1,8 @@
 ﻿using MeetingApp.Api.Contracts.Base;
 
-namespace MeetingApp.Api.Contracts.UserOtp.Commands
+namespace MeetingApp.Api.Contracts.UserOtp.Queries
 {
-    public class CreateUserOtpCommandRequest : BaseResquestModel
+    public class GetByIdUserOtpQueryResponse : BaseResponseModel
     {
         public string Email { get; set; }
 

@@ -2,7 +2,7 @@
 
 namespace MeetingApp.Api.Contracts.UserOtp.Commands
 {
-    public class CreateUserOtpCommandRequest : BaseResquestModel
+    public class CreateUserOtpCommandResponse : BaseResponseModel
     {
         public string Email { get; set; }
 

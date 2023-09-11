@@ -2,7 +2,7 @@
 
 namespace MeetingApp.Api.Contracts.User.Queries
 {
-    public class GetAllUserQueryResponse : BaseResponseModel
+    public class GetByIdUserQueryResponse : BaseResponseModel
     {
         public string FirstName { get; set; }
 

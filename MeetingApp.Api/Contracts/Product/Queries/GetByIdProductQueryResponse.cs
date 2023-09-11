@@ -1,9 +1,9 @@
 ﻿using MeetingApp.Api.Contracts.Base;
 using MeetingApp.Domain.Entities;
 
-namespace MeetingApp.Api.Contracts.Product.Commands
+namespace MeetingApp.Api.Contracts.Product.Queries
 {
-    public class CreateProductCommandRequest : BaseResquestModel
+    public class GetByIdProductQueryResponse : BaseResponseModel
     {
         public string FirstName { get; set; }
 

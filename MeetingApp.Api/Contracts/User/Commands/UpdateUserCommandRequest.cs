@@ -1,9 +1,10 @@
 ﻿using MeetingApp.Api.Contracts.Base;
 
-namespace MeetingApp.Api.Contracts.User.Queries
+namespace MeetingApp.Api.Contracts.User.Commands
 {
-    public class GetAllUserQueryResponse : BaseResponseModel
+    public class UpdateUserCommandRequest : BaseResquestModel
     {
+        public long Id { get; set; }
         public string FirstName { get; set; }
 
         public string LastName { get; set; }

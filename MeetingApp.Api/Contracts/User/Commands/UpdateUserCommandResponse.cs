@@ -1,8 +1,8 @@
 ﻿using MeetingApp.Api.Contracts.Base;
 
-namespace MeetingApp.Api.Contracts.User.Queries
+namespace MeetingApp.Api.Contracts.User.Commands
 {
-    public class GetAllUserQueryResponse : BaseResponseModel
+    public class UpdateUserCommandResponse : BaseResponseModel
     {
         public string FirstName { get; set; }
 
