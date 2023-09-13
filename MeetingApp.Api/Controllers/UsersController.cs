@@ -6,5 +6,8 @@ namespace MeetingApp.Api.Controllers
 {
     public class UsersController : BaseApiController
     {
+        public UsersController(ILogger<BaseApiController> logger) : base(logger)
+        {
+        }
     }
 }

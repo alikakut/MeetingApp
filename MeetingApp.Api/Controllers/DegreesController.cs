@@ -6,5 +6,8 @@ namespace MeetingApp.Api.Controllers
 {
     public class DegreesController : BaseApiController
     {
+        public DegreesController(ILogger<BaseApiController> logger) : base(logger)
+        {
+        }
     }
 }

@@ -7,14 +7,43 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ErrorOr" Version="1.2.1" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.7.1" />
     <PackageReference Include="Mapster" Version="7.3.0" />
     <PackageReference Include="MediatR" Version="12.1.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MeetingApp.Domain\MeetingApp.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Degree\Commands\Create\" />
+    <Folder Include="Features\Degree\Commands\Delete\" />
+    <Folder Include="Features\Degree\Commands\Update\" />
+    <Folder Include="Features\Degree\Queries\GetById\" />
+    <Folder Include="Features\Degree\Queries\GetAll\" />
+    <Folder Include="Features\Package\Commands\Create\" />
+    <Folder Include="Features\Package\Commands\Delete\" />
+    <Folder Include="Features\Package\Commands\Update\" />
+    <Folder Include="Features\Package\Queries\GetById\" />
+    <Folder Include="Features\Package\Queries\GetAll\" />
+    <Folder Include="Features\Product\Commands\Delete\" />
+    <Folder Include="Features\Product\Commands\Update\" />
+    <Folder Include="Features\Product\Queries\GetById\" />
+    <Folder Include="Features\Product\Queries\GetAll\" />
+    <Folder Include="Features\UserOtp\Commands\Create\" />
+    <Folder Include="Features\UserOtp\Commands\Delete\" />
+    <Folder Include="Features\UserOtp\Commands\Update\" />
+    <Folder Include="Features\UserOtp\Queries\GetAll\" />
+    <Folder Include="Features\UserOtp\Queries\GetById\" />
+    <Folder Include="Features\User\Commands\Create\" />
+    <Folder Include="Features\User\Commands\Delete\" />
+    <Folder Include="Features\User\Commands\Update\" />
+    <Folder Include="Features\User\Queries\GetAll\" />
+    <Folder Include="Features\User\Queries\GetById\" />
   </ItemGroup>
 
 </Project>
