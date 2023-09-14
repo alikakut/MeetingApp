@@ -20,11 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Degree\Commands\Create\" />
-    <Folder Include="Features\Degree\Commands\Delete\" />
-    <Folder Include="Features\Degree\Commands\Update\" />
-    <Folder Include="Features\Degree\Queries\GetById\" />
-    <Folder Include="Features\Degree\Queries\GetAll\" />
     <Folder Include="Features\Package\Commands\Create\" />
     <Folder Include="Features\Package\Commands\Delete\" />
     <Folder Include="Features\Package\Commands\Update\" />
