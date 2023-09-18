@@ -25,11 +25,6 @@
     <Folder Include="Features\UserOtp\Commands\Update\" />
     <Folder Include="Features\UserOtp\Queries\GetAll\" />
     <Folder Include="Features\UserOtp\Queries\GetById\" />
-    <Folder Include="Features\User\Commands\Create\" />
-    <Folder Include="Features\User\Commands\Delete\" />
-    <Folder Include="Features\User\Commands\Update\" />
-    <Folder Include="Features\User\Queries\GetAll\" />
-    <Folder Include="Features\User\Queries\GetById\" />
   </ItemGroup>
 
 </Project>
