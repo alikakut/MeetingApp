@@ -3,7 +3,7 @@ using MeetingApp.Domain.Entities;
 
 namespace MeetingApp.Application.Interfaces.Repositories
 {
-    public interface IPackageRepository : IRepositoryBase<PackageEnity>
+    public interface IPackageRepository : IRepositoryBase<PackageEntity>
     {
     }
 }

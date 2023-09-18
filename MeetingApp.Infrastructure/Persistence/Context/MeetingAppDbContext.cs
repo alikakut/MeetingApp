@@ -21,7 +21,7 @@ namespace MeetingApp.Infrastructure.Persistence.Context
 
         public DbSet<ProductEntity> ProductEntities { get; set; }
         public DbSet<CategoryEntity> CategoryEntities { get; set; }
-        public DbSet<PackageEnity> PackageEnities { get; set; }
+        public DbSet<PackageEntity> PackageEnities { get; set; }
         public DbSet<DegreeEntity> DegreeEntities{ get; set; }
         public DbSet<UserEntity> UserEntities { get; set; }
         public DbSet<UserOtpEntity> UserOtpEntities { get; set;}

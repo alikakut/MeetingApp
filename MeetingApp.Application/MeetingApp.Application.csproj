@@ -20,15 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Package\Commands\Create\" />
-    <Folder Include="Features\Package\Commands\Delete\" />
-    <Folder Include="Features\Package\Commands\Update\" />
-    <Folder Include="Features\Package\Queries\GetById\" />
-    <Folder Include="Features\Package\Queries\GetAll\" />
-    <Folder Include="Features\Product\Commands\Delete\" />
-    <Folder Include="Features\Product\Commands\Update\" />
-    <Folder Include="Features\Product\Queries\GetById\" />
-    <Folder Include="Features\Product\Queries\GetAll\" />
     <Folder Include="Features\UserOtp\Commands\Create\" />
     <Folder Include="Features\UserOtp\Commands\Delete\" />
     <Folder Include="Features\UserOtp\Commands\Update\" />

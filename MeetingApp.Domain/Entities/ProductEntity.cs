@@ -33,6 +33,6 @@ namespace MeetingApp.Domain.Entities
         public string? Certificate { get; set; }
 
         [ForeignKey("package_id")]
-        public PackageEnity Package { get; set; }
+        public PackageEntity Package { get; set; }
     }
 }

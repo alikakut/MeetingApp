@@ -20,6 +20,6 @@ namespace MeetingApp.Api.Contracts.Product.Commands
 
         public string? Certificate { get; set; }
 
-        public PackageEnity Package { get; set; }
+        public PackageEntity Package { get; set; }
     }
 }

@@ -9,7 +9,7 @@ using MeetingApp.Infrastructure.Repositories.Base;
 
 namespace MeetingApp.Infrastructure.Repositories
 {
-    public class PackageRepository : EfRepositoryBase<PackageEnity> , IPackageRepository
+    public class PackageRepository : EfRepositoryBase<PackageEntity> , IPackageRepository
     {
     }
 }

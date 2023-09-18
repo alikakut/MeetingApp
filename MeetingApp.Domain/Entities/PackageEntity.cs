@@ -9,7 +9,7 @@ using MeetingApp.Domain.Base;
 namespace MeetingApp.Domain.Entities
 {
     [Table("package")]
-    public class PackageEnity : BaseEntity
+    public class PackageEntity : BaseEntity
     {
         [Column("detail")]
         public string Detail { get; set; }
