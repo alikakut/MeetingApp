@@ -19,12 +19,4 @@
     <ProjectReference Include="..\MeetingApp.Domain\MeetingApp.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\UserOtp\Commands\Create\" />
-    <Folder Include="Features\UserOtp\Commands\Delete\" />
-    <Folder Include="Features\UserOtp\Commands\Update\" />
-    <Folder Include="Features\UserOtp\Queries\GetAll\" />
-    <Folder Include="Features\UserOtp\Queries\GetById\" />
-  </ItemGroup>
-
 </Project>
