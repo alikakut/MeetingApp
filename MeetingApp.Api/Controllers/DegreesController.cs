@@ -1,4 +1,13 @@
-﻿using MeetingApp.Api.Controllers.Base;
+﻿using Mapster;
+using MediatR;
+using MeetingApp.Api.Contracts.Degree.Commands;
+using MeetingApp.Api.Contracts.Degree.Queries;
+using MeetingApp.Api.Controllers.Base;
+using MeetingApp.Application.Features.Degre.Commands.Create;
+using MeetingApp.Application.Features.Degre.Commands.Delete;
+using MeetingApp.Application.Features.Degre.Commands.Update;
+using MeetingApp.Application.Features.Degre.Queries.GetAll;
+using MeetingApp.Application.Features.Degre.Queries.GetById;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,8 +15,37 @@ namespace MeetingApp.Api.Controllers
 {
     public class DegreesController : BaseApiController
     {
-        public DegreesController(ILogger<BaseApiController> logger) : base(logger)
+        private readonly IMediator _mediator;
+
+        public DegreesController( ILogger<BaseApiController> logger, IMediator mediator) : base(logger)
         {
+            _mediator = mediator;
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(long id)
+        {
+            return await ApiResponse<GetByIdDegreeQueryResponse>(await _mediator.Send(new GetByIdDegreQuery { Id = id }));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] CreateDegreeCommandRequest request)
+        {
+            var command = request.Adapt<CreateDegreCommand>();
+            return await ApiResponse<CreateDegreeCommandResponse>(await _mediator.Send(command));
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Update([FromBody] UpdateDegreeCommandRequest request)
+        {
+            var command = request.Adapt<UpdateDegreCommand>();
+            return await ApiResponse<UpdateDegreeCommandResponse>(await _mediator.Send(command));
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(long id)
+        {
+            return await ApiResponse<DeleteDegreeCommandResponse>(await _mediator.Send(new DeleteDegreCommand { Id = id }));
         }
     }
 }
