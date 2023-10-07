@@ -6,6 +6,5 @@ namespace MeetingApp.Application.Interfaces.Repositories
 {
     public interface IPackageRepository : IRepositoryBase<PackageEntity>
     {
-        Task GetAll(DataFilterModel dataFilter);
     }
 }

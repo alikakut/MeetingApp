@@ -6,6 +6,5 @@ namespace MeetingApp.Application.Interfaces.Repositories
 {
     public interface IDegreeRepository : IRepositoryBase<DegreeEntity>
     {
-        Task GetAll(DataFilterModel dataFilter);
     }
 }
