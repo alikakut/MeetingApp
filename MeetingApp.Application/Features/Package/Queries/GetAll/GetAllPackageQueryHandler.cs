@@ -16,7 +16,7 @@ namespace MeetingApp.Application.Features.Package.Queries.GetAll
 
         public async Task<ErrorOr<List<GetAllPackageQueryResult>>> Handle(GetAllPackageQuery request, CancellationToken cancellationToken)
         {
-            var data = ToString();  //await _packageRepository.GetAll(request.DataFilter);
+            var data = ToString();  await _packageRepository.GetAll(request.DataFilter);
 
             return data.Adapt<List<GetAllPackageQueryResult>>();
         }

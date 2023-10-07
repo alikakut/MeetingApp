@@ -16,7 +16,7 @@ namespace MeetingApp.Application.Features.Users.Queries.GetAll
 
         public async Task<ErrorOr<List<GetAllUsersQueryResult>>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
         {
-            var data = ToString(); //await _usersRepository.GetAll(request.DataFilter);
+            var data = ToString(); await _usersRepository.GetAll(request.DataFilter);
 
             return data.Adapt<List<GetAllUsersQueryResult>>();
         }

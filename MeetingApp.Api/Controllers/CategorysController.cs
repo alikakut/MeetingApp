@@ -8,17 +8,26 @@ using MeetingApp.Application.Features.Category.Commands.Delete;
 using MeetingApp.Application.Features.Category.Commands.Update;
 using MeetingApp.Application.Features.Category.Queries.GetAll;
 using MeetingApp.Application.Features.Category.Queries.GetById;
+using MeetingApp.Application.Interfaces.CacheService;
+using MeetingApp.Application.Utilities.Sieve;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace MeetingApp.Api.Controllers
 {
     public class CategorysController : BaseApiController
     {
         private readonly IMediator _mediator;
-        public CategorysController(ILogger<BaseApiController> logger, IMediator mediator) : base(logger)
+        public CategorysController(ICacheService cacheService,ILogger<BaseApiController> logger, IMediator mediator) : base(cacheService ,logger)
         {
             _mediator = mediator;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll([FromQuery] DataFilterModel dataFilterModel)
+        {
+            return await ApiResponse<List<GetAllCategoryQueryResponse>>(await _mediator.Send(new GetAllCategoryQuery { DataFilter = dataFilterModel }));
         }
 
         [HttpGet("{id}")]

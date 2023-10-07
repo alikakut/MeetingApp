@@ -16,7 +16,7 @@ namespace MeetingApp.Application.Features.UserOtp.Queries.GetAll
 
         public async Task<ErrorOr<List<GetAllUserOtpQueryResult>>> Handle(GetAllUserOtpQuery request, CancellationToken cancellationToken)
         {
-            var data = ToString(); //await _userOtpRepository.GetAll(request.DataFilter);
+            var data = ToString(); await _userOtpRepository.GetAll(request.DataFilter);
 
             return data.Adapt<List<GetAllUserOtpQueryResult>>();
         }

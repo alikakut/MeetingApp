@@ -16,7 +16,7 @@ namespace MeetingApp.Application.Features.Degre.Queries.GetAll
 
         public async Task<ErrorOr<List<GetAllDegreQueryResult>>> Handle(GetAllDegreQuery request, CancellationToken cancellationToken)
         {
-            var data = ToString(); //await _degreRepository.GetAll(request.DataFilter);
+            var data = ToString(); await _degreRepository.GetAll(request.DataFilter);
 
             return data.Adapt<List<GetAllDegreQueryResult>>();
         }

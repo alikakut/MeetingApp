@@ -19,7 +19,7 @@ namespace MeetingApp.Application.Features.Category.Commands.Create
         {
             var entity = command.Adapt<CategoryEntity>();
 
-           // await _categoryRepository.AddAsync(entity);
+            await _categoryRepository.AddAsync(entity);
 
             return new CreateCategoryCommandResult();
         }

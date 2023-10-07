@@ -16,7 +16,7 @@ namespace MeetingApp.Application.Features.Category.Queries.GetAll
 
         public async Task<ErrorOr<List<GetAllCategoryQueryResult>>> Handle(GetAllCategoryQuery request, CancellationToken cancellationToken)
         {
-            var data = ToString(); //await _categoryRepository.GetAll(request.DataFilter);
+            var data = ToString(); await _categoryRepository.GetAll(request.DataFilter);
             return data.Adapt<List<GetAllCategoryQueryResult>>();
         }
     }

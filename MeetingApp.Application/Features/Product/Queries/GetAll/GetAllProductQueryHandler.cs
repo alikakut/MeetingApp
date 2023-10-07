@@ -16,7 +16,7 @@ namespace MeetingApp.Application.Features.Product.Queries.GetAll
 
         public async Task<ErrorOr<List<GetAllProductQueryResult>>> Handle(GetAllProductQuery request, CancellationToken cancellationToken)
         {
-            var data = ToString();  //await _productRepository.GetAll(request.DataFilter);
+            var data = ToString();  await _productRepository.GetAll(request.DataFilter);
 
             return data.Adapt<List<GetAllProductQueryResult>>();
         }

@@ -8,6 +8,8 @@ using MeetingApp.Application.Features.UserOtp.Commands.Delete;
 using MeetingApp.Application.Features.UserOtp.Commands.Update;
 using MeetingApp.Application.Features.UserOtp.Queries.GetAll;
 using MeetingApp.Application.Features.UserOtp.Queries.GetById;
+using MeetingApp.Application.Interfaces.CacheService;
+using MeetingApp.Application.Utilities.Sieve;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,9 +19,15 @@ namespace MeetingApp.Api.Controllers
     {
         private readonly IMediator _mediator;
 
-        public UserOtpsController(ILogger<BaseApiController> logger, IMediator mediator) : base(logger)
+        public UserOtpsController(ICacheService cacheService,ILogger<BaseApiController> logger, IMediator mediator) : base(cacheService, logger)
         {
             _mediator = mediator;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll([FromQuery] DataFilterModel dataFilterModel)
+        {
+            return await ApiResponse<List<GetAllUserOtpQueryResponse>>(await _mediator.Send(new GetAllUserOtpQuery { DataFilter = dataFilterModel }));
         }
 
         [HttpGet("{id}")]

@@ -8,6 +8,8 @@ using MeetingApp.Application.Features.Package.Commands.Delete;
 using MeetingApp.Application.Features.Package.Commands.Update;
 using MeetingApp.Application.Features.Package.Queries.GetAll;
 using MeetingApp.Application.Features.Package.Queries.GetById;
+using MeetingApp.Application.Interfaces.CacheService;
+using MeetingApp.Application.Utilities.Sieve;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,9 +19,15 @@ namespace MeetingApp.Api.Controllers
     {
         private readonly IMediator _mediator;
 
-        public PackagesController(ILogger<BaseApiController> logger, IMediator mediator) : base(logger)
+        public PackagesController(ICacheService cacheService,ILogger<BaseApiController> logger, IMediator mediator) : base(cacheService, logger)
         {
             _mediator = mediator;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll([FromQuery] DataFilterModel dataFilterModel)
+        {
+            return await ApiResponse<List<GetAllPackageQueryResponse>>(await _mediator.Send(new GetAllPackageQuery { DataFilter = dataFilterModel }));
         }
 
         [HttpGet("{id}")]

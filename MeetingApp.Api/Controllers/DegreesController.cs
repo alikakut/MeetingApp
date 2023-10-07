@@ -8,6 +8,8 @@ using MeetingApp.Application.Features.Degre.Commands.Delete;
 using MeetingApp.Application.Features.Degre.Commands.Update;
 using MeetingApp.Application.Features.Degre.Queries.GetAll;
 using MeetingApp.Application.Features.Degre.Queries.GetById;
+using MeetingApp.Application.Interfaces.CacheService;
+using MeetingApp.Application.Utilities.Sieve;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,9 +19,15 @@ namespace MeetingApp.Api.Controllers
     {
         private readonly IMediator _mediator;
 
-        public DegreesController( ILogger<BaseApiController> logger, IMediator mediator) : base(logger)
+        public DegreesController(ICacheService cacheService, ILogger<BaseApiController> logger, IMediator mediator) : base(cacheService,logger)
         {
             _mediator = mediator;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll([FromQuery] DataFilterModel dataFilterModel)
+        {
+            return await ApiResponse<List<GetAllDegreeQueryResponse>>(await _mediator.Send(new GetAllDegreQuery { DataFilter = dataFilterModel }));
         }
 
         [HttpGet("{id}")]
