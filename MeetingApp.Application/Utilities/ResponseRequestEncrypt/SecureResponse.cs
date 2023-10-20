@@ -15,7 +15,7 @@ namespace MeetingApp.Application.Utilities.ResponseRequestEncrypt
         }
         public SecureResponse(object @object)
         {
-            Response = AES.EncryptStringAES(@object.ToJSON());
+           // Response = AES.EncryptStringAES(@object.ToJSON());
         }
         public string Response { get; set; }
     }
